@@ -1,3 +1,15 @@
+/* Too lazy to scroll down lol, jsut gonna change stuff here */
+:root {
+    --header-bg-color: #393f4d;
+    --sidebar-bg-color: #2757f7;
+    --main-content-bg-color: #bccbde;
+
+    --icon-size: 30px;
+    --icon-color: #fff; /* Also change text color next to icon */
+
+    --bg-color-on-hover: #ff6ecb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +21,7 @@ body {
 
 .container {
     display: grid;
-    grid: "sidebar header" 1fr "sidebar main-content" 4fr / minmax(max-content, 1fr) 4fr;
+    grid: "sidebar header" 1fr "sidebar main-content" 4fr / minmax(max-content, 1fr) 4fr; /* Forgot how ts works lol */
     height: 100%;
 }
 
@@ -19,20 +31,24 @@ body {
     color: white;
 }
 
+/* Header here */
+
 .header {
     grid-area: header;
-    background-color: #393f4d;
+    background-color: var(--header-bg-color);
 }
 
+/* Sidebar here */
+
 .sidebar {
-  background-color: #C50208;
+  background-color: var(--sidebar-bg-color);
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 6em;
-  padding: 2em;
+  gap: 3em;
+  padding: 1.5em;
 
 }
 
@@ -41,24 +57,40 @@ body {
 }
 
 .sidebar svg {
-    width: 25px;
+    width: var(--icon-size);
+    fill: var(--icon-color);
+}
+
+.sidebar a, h1{
+    color: var(--icon-color);
 }
 
 .sidebar-content ul {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 1.5em;
+    gap: 0.5em;
 }
 
 .sidebar-content ul li {
     display: flex;
     align-items: center;
     gap: 15px;
+    padding: 10px;
+
+transition: transform 0.3s ease, background-color 0.3s ease, rotate 0.3s ease;
+}
+
+.sidebar-content li:hover {
+    transform: translateY(-5px);
+    rotate: 2deg;
+    background-color: var(--bg-color-on-hover); 
 }
 
 
+/* Main shit here */
+
 .main-content {
-  background-color: #bccbde;
+  background-color: var(--main-content-bg-color);
   grid-area: main-content;
 }
