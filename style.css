@@ -37,9 +37,11 @@ body {
     grid-area: header;
     background-color: var(--header-bg-color);
     display: grid;
-    grid-template-rows: 50px 50px;
+    grid-template-areas: "searchbox profile" 
+                        "welcome-text button";
     grid-template-columns: 1.5fr 1fr;
     padding: 0.5rem 2rem;
+    grid-template-rows: 1fr 2.5fr;
 }
 
 .search-container {
@@ -82,10 +84,11 @@ body {
     border-radius: 50%;
 }
 
-.second-row {
+.welcome-user {
     display: flex;
-    justify-content: space-between;
+    /*! justify-content: space-between; */
     align-items: center;
+    grid-area: welcome-text;
 }
 
 .welcome {
@@ -101,7 +104,10 @@ body {
 }
 
 .btn-container {
-
+    display: flex;
+    align-items: center;
+    /*! padding-right: 1em; */
+    justify-content: space-between;
 }
 
 .btn-container button {
