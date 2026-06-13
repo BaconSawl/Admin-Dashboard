@@ -1,6 +1,9 @@
 /* Too lazy to scroll down lol, jsut gonna change stuff here */
 :root {
     --header-bg-color: rgba(253,170,180,255);
+    --header-stroke-color: #b84776;
+    --header-text-color: white;
+
     --sidebar-bg-color: #2757f7;
     --main-content-bg-color: #bccbde;
 
@@ -8,6 +11,8 @@
     --icon-color: #fff; /* Also change text color next to icon */
 
     --bg-color-on-hover: #ff6ecb;
+
+
 }
 
 * {
@@ -46,8 +51,8 @@ body {
     row-gap: 15px;
 
     text-decoration: none;
-    color: white;
-    -webkit-text-stroke: 3px #b84776;
+    color: var(--header-text-color);
+    -webkit-text-stroke: 3px var(--header-stroke-color);
     paint-order: stroke fill ;
 
     padding-bottom: 1em;
@@ -61,7 +66,7 @@ body {
 
 }
 
-.profile {
+.profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,16 +74,17 @@ body {
 }
 
 .search-container input[type="search"] {
-  /*! width: 100%; */
-  /*! padding: 12px 16px 12px 42px; */
-  background-color: #f5f7fa;
-  border-radius: 10px;
-  
-  /* Reset browser-specific defaults */
-  appearance: none; /* 0.5.9, 0.5.28 */
-  outline: none; /* 0.5.6 */
-  flex: 1;
-  height: 2em;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+
+    /* Reset browser-specific defaults */
+    appearance: none;
+    outline: none;
+    flex: 1;
+    height: 2em;
+    -webkit-text-stroke: 3px black;
+    color: white;
+    padding: 1rem;
 }
 
 
@@ -101,24 +107,18 @@ body {
     border: 2px solid black;
 }
 
-.welcome-user {
+.user-welcome-container {
     display: flex;
-    /*! justify-content: space-between; */
-    align-items: center;
-    grid-area: welcome-text;
+    /*! align-items: center; */
+    /*! grid-area: welcome-text; */
     gap: 0.5rem 1rem;
-}
-
-.welcome {
-    display: flex;
-    gap: 1em;
 }
 
 .welcome-text-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    /*! align-items: flex-start; */
     gap: 0.54rem;
 }
 
@@ -203,6 +203,6 @@ transition: transform 0.3s ease, background-color 0.3s ease, rotate 0.3s ease;
 /* Main shit here */
 
 .main-content {
-  background-color: var(--main-content-bg-color);
-  grid-area: main-content;
+    background-color: var(--main-content-bg-color);
+    grid-area: main-content;
 }
