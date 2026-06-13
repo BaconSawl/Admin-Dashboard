@@ -1,6 +1,6 @@
 /* Too lazy to scroll down lol, jsut gonna change stuff here */
 :root {
-    --header-bg-color: #393f4d;
+    --header-bg-color: rgba(253,170,180,255);
     --sidebar-bg-color: #2757f7;
     --main-content-bg-color: #bccbde;
 
@@ -28,7 +28,8 @@ body {
 .container div {
     font-family: Helvetica;
     font-weight: bold;
-    color: white;
+
+    
 }
 
 /* Header here */
@@ -41,7 +42,16 @@ body {
                         "welcome-text button";
     grid-template-columns: 1.5fr 1fr;
     padding: 0.5rem 2rem;
-    grid-template-rows: 1fr 2.5fr;
+    grid-template-rows: 1fr 1.5fr;
+    row-gap: 15px;
+
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke: 3px #b84776;
+    paint-order: stroke fill ;
+
+    padding-bottom: 1em;
+
 }
 
 .search-container {
@@ -76,12 +86,19 @@ body {
     width: 30px;
 }
 
-
-
-.profile-picture {
-    height: 3rem;
+.user-profile-small {
     width: 3rem;
+    height: 3rem;
     border-radius: 50%;
+    flex: none;
+    border: 2px solid black;
+}
+
+.user-profile-big   {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid black;
 }
 
 .welcome-user {
@@ -89,6 +106,7 @@ body {
     /*! justify-content: space-between; */
     align-items: center;
     grid-area: welcome-text;
+    gap: 0.5rem 1rem;
 }
 
 .welcome {
@@ -101,38 +119,48 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    gap: 0.54rem;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .btn-container {
     display: flex;
     align-items: center;
-    /*! padding-right: 1em; */
-    justify-content: space-between;
+    padding-right: 1em;
+    justify-content: space-around;
 }
 
 .btn-container button {
-    color: #ff5ea2;
     padding: 8px;
-    width: 150px;
+    width: 120px;
     background: linear-gradient(145deg,#ffd1ec, #ffe6f5);
-    border-radius: 16px;
+    border-radius: 14px;
     font-weight: bold;
-    font-size: 1.125em;
+    font-size: 1em;
     border-color: #ce446d;
+    color: white;
+
+    padding: 0.4rem 1.2rem;
+    background-color: transparent;
 }
 
 
 /* Sidebar here */
 
 .sidebar {
-  background-color: var(--sidebar-bg-color);
-  grid-area: sidebar;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 3em;
-  padding: 1.5em;
+    background-color: var(--sidebar-bg-color);
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3em;
+    padding: 1.5em;
+    color: #fffeff;
 
 }
 
